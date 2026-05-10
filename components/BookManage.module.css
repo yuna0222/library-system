@@ -1,0 +1,18 @@
+.title { font-size: 22px; font-weight: 700; color: var(--primary); margin-bottom: 24px; }
+.formBox { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 32px; box-shadow: var(--shadow); }
+.formBox h3 { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 16px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.input { padding: 10px 16px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px; background: var(--surface); outline: none; transition: border-color 0.2s; width: 100%; }
+.input:focus { border-color: var(--accent); }
+.addBtn { grid-column: span 2; padding: 12px; background: var(--primary); color: white; border: none; border-radius: 8px; font-size: 15px; font-weight: 700; transition: background 0.2s; }
+.addBtn:hover { background: var(--accent); }
+.msg { margin-top: 12px; color: var(--accent); font-size: 14px; font-weight: 600; }
+.listBox h3 { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 16px; }
+.item { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 10px; box-shadow: var(--shadow); }
+.info { display: flex; flex-direction: column; gap: 4px; }
+.info strong { font-size: 15px; color: var(--primary); }
+.info span { font-size: 13px; color: var(--muted); }
+.delBtn { padding: 8px 16px; background: var(--danger-light); color: var(--danger); border: 1.5px solid var(--danger); border-radius: 8px; font-size: 13px; font-weight: 600; white-space: nowrap; transition: all 0.2s; }
+.delBtn:hover { background: var(--danger); color: white; }
+.empty { color: var(--muted); font-size: 14px; padding: 24px; text-align: center; background: var(--surface); border-radius: var(--radius); border: 1.5px dashed var(--border); }
+@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } .addBtn { grid-column: span 1; } .item { flex-direction: column; align-items: flex-start; } }
