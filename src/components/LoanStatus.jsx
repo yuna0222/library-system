@@ -1,7 +1,12 @@
+'use client';
+import { useState } from 'react';
 import { LOAN_PERIOD_DAYS, daysDiff } from '@/data';
+import ReturnModal from './ReturnModal';
 import styles from './LoanStatus.module.css';
 
 export default function LoanStatus({ activeLoans, returnedLoans, overdueLoans, onReturn }) {
+  const [returnTarget, setReturnTarget] = useState(null);
+
   return (
     <div>
       <h2 className={styles.title}>대출 현황</h2>
@@ -35,7 +40,9 @@ export default function LoanStatus({ activeLoans, returnedLoans, overdueLoans, o
                     : <span className={styles.ddayLabel}>반납까지 {LOAN_PERIOD_DAYS - elapsed}일 남음</span>
                   }
                 </div>
-                <button className={styles.returnBtn} onClick={() => onReturn(loan)}>반납 처리</button>
+                <button className={styles.returnBtn} onClick={() => setReturnTarget(loan)}>
+                  반납 처리
+                </button>
               </div>
             );
           })
@@ -59,6 +66,14 @@ export default function LoanStatus({ activeLoans, returnedLoans, overdueLoans, o
           ))
         }
       </section>
+
+      {returnTarget && (
+        <ReturnModal
+          loan={returnTarget}
+          onConfirm={onReturn}
+          onClose={() => setReturnTarget(null)}
+        />
+      )}
     </div>
   );
 }

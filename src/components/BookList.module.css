@@ -3,8 +3,8 @@
 .searchRow { display: flex; gap: 12px; }
 .input { padding: 10px 16px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px; background: var(--surface); outline: none; transition: border-color 0.2s; width: 100%; }
 .input:focus { border-color: var(--accent); }
-.catRow { display: flex; gap: 8px; flex-wrap: wrap; }
-.catBtn { padding: 6px 16px; border-radius: 20px; border: 1.5px solid var(--border); background: var(--surface); color: var(--muted); font-size: 13px; transition: all 0.2s; font-weight: 500; }
+.catRow { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.catBtn { padding: 6px 18px; border-radius: 20px; border: 1.5px solid var(--border); background: var(--surface); color: var(--muted); font-size: 13px; transition: all 0.2s; font-weight: 500; white-space: nowrap; flex-shrink: 0; }
 .catBtn:hover { border-color: var(--accent); color: var(--accent); }
 .catActive { background: var(--accent) !important; color: white !important; border-color: var(--accent) !important; font-weight: 700 !important; }
 .count { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
