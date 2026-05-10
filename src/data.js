@@ -1,5 +1,19 @@
 export const LOAN_PERIOD_DAYS = 7;
 
+export const CATEGORIES = ['소설', '개발', '역사', '자기계발', '과학', '경제', '철학', '기타'];
+
+// 카테고리별 커버 이미지 (Unsplash 무료 이미지)
+export const CATEGORY_COVERS = {
+  '소설':    'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400&q=80',
+  '개발':    'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&q=80',
+  '역사':    'https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=400&q=80',
+  '자기계발':'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=400&q=80',
+  '과학':    'https://images.unsplash.com/photo-1532094349884-543559059c2b?w=400&q=80',
+  '경제':    'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&q=80',
+  '철학':    'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&q=80',
+  '기타':    'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&q=80',
+};
+
 export const SAMPLE_BOOKS = [
   { id: 1, title: '클린 코드', author: '로버트 C. 마틴', category: '개발', total: 3, available: 2 },
   { id: 2, title: '리팩터링', author: '마틴 파울러', category: '개발', total: 2, available: 1 },

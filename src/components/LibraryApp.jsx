@@ -20,11 +20,9 @@ export default function LibraryApp() {
   const [tab, setTab] = useState('도서 목록');
   const [books, setBooks] = useState(SAMPLE_BOOKS);
   const [loans, setLoans] = useState(SAMPLE_LOANS);
-  const [borrower, setBorrower] = useState('');
 
-  /* ── 대출 신청 ── */
-  const handleLoan = (book) => {
-    if (!borrower.trim()) { alert('대출자 이름을 입력해주세요.'); return; }
+  /* ── 대출 신청 (모달에서 borrower 받음) ── */
+  const handleLoan = (book, borrower) => {
     if (book.available <= 0) { alert('대출 가능한 도서가 없습니다.'); return; }
     const today = new Date().toISOString().slice(0, 10);
     setLoans(prev => [...prev, {
@@ -32,13 +30,12 @@ export default function LibraryApp() {
       bookId: book.id,
       bookTitle: book.title,
       author: book.author,
-      borrower: borrower.trim(),
+      borrower,
       loanDate: today,
       returnDate: null,
       status: '대출중',
     }]);
     setBooks(prev => prev.map(b => b.id === book.id ? { ...b, available: b.available - 1 } : b));
-    setBorrower('');
     alert(`"${book.title}" 대출이 완료되었습니다!`);
   };
 
@@ -98,8 +95,6 @@ export default function LibraryApp() {
         {tab === '도서 목록' && (
           <BookList
             books={books}
-            borrower={borrower}
-            setBorrower={setBorrower}
             onLoan={handleLoan}
           />
         )}
