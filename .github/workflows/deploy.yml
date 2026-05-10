@@ -41,4 +41,4 @@ jobs:
       # 6. S3로 배포
       - name: Deploy to S3
         run: |
-          aws s3 sync ./ s3://mybucket-20263564 --delete --exclude ".git/*" --exclude ".github/*"
+          aws s3 sync ./out s3://mybucket-20263564 --delete
