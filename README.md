@@ -1,44 +1,44 @@
-# 📚 LibraryOS - 도서관 대출 관리 시스템
+# 📚 LibraryOS
 
-> React(CRA) 기반 도서관 대출 관리 웹 시스템  
+> **library-system** | React(CRA) 기반 도서관 대출 관리 웹 시스템
 > GitHub Actions를 활용한 AWS S3 자동 배포 (CI/CD)
 
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)
 ![AWS S3](https://img.shields.io/badge/AWS-S3-FF9900?logo=amazonaws)
+![AWS Amplify](https://img.shields.io/badge/AWS-Amplify-FF9900?logo=awsamplify)
 ![GitHub Actions](https://img.shields.io/badge/GitHub-Actions-2088FF?logo=githubactions)
-
----
-
-## 📋 목차
-
-1. [프로젝트 소개](#-프로젝트-소개)
-2. [주요 기능](#-주요-기능)
-3. [기술 스택](#-기술-스택)
-4. [프로젝트 구조](#-프로젝트-구조)
-5. [로컬 실행 방법](#-로컬-실행-방법)
-6. [AWS S3 설정](#-aws-s3-설정)
-7. [GitHub Actions CI/CD 설정](#-github-actions-cicd-설정)
-8. [배포 흐름](#-배포-흐름)
-9. [주의사항](#-주의사항)
-
----
-
-## 📹 시연 영상
-
-- **GitHub Actions CI/CD 구축 시연**: [YouTube 링크 추가 예정]
-- **AWS Amplify 호스팅 시연**: [YouTube 링크 추가 예정]
 
 ---
 
 ## 🏫 프로젝트 소개
 
-LibraryOS는 도서관 이용자와 사서 모두를 위한 웹 기반 도서 대출 관리 시스템입니다.
+**LibraryOS**는 도서관 이용자와 사서를 위한 웹 기반 도서 대출 관리 시스템입니다.
 
-- **이용자**: 도서 검색, 카테고리 필터링, 대출 신청
-- **사서**: 비밀번호 인증 후 도서 추가/삭제 및 전체 대출 현황 관리
+이용자는 도서를 검색하고 대출 신청을 할 수 있으며, 사서는 비밀번호 인증 후 도서 추가/삭제 및 대출 현황을 관리할 수 있습니다.
 
-백엔드 서버 없이 **React + 정적 호스팅** 구조로 동작하며,  
-GitHub에 코드를 push하면 **GitHub Actions가 자동으로 빌드 후 AWS S3에 배포**합니다.
+백엔드 서버 없이 **React + 샘플 데이터** 기반으로 동작하며, GitHub에 코드를 push하면 **GitHub Actions가 자동으로 빌드 후 AWS S3에 배포**됩니다.
+
+> 🤖 이 프로젝트는 **Claude (Anthropic)** 생성형 AI의 도움을 받아 구현되었습니다.
+
+---
+
+## 🌐 배포 URL
+
+| 서비스      | URL                                                         |
+| ----------- | ----------------------------------------------------------- |
+| AWS S3      | http://mybucket-20263564.s3-website-us-east-1.amazonaws.com |
+| AWS Amplify | https://main.dsnietznhyo4d.amplifyapp.com                   |
+
+> ⚠️ S3 URL은 AWS Academy 세션 기준 4시간만 유효합니다.
+
+---
+
+## 🎬 시연 영상
+
+| 과제                           | 영상           |
+| ------------------------------ | -------------- |
+| GitHub Actions CI/CD 구축 시연 | [YouTube 링크] |
+| AWS Amplify 호스팅 시연        | [YouTube 링크] |
 
 ---
 
@@ -60,14 +60,14 @@ GitHub에 코드를 push하면 **GitHub Actions가 자동으로 빌드 후 AWS S
 ### 📋 대출 현황
 
 - 현재 대출중 / 반납 완료 목록 분리 표시
-- 반납 기한(7일) 초과 시 연체 알림 표시 (주황색 강조)
+- 반납 기한(7일) 초과 시 연체 알림 (주황색 강조)
 - 반납 처리 시 확인 팝업 → 반납일, 연체 여부 확인 후 처리
 - 헤더 및 탭에 연체 건수 배지 표시
 
 ### 🏆 인기 랭킹
 
 - 전체 대출 기록 기준 누적 대출 횟수 TOP 10
-- 🥇🥈🥉 메달 + 대출 횟수 비율 바 차트 시각화
+- 🥇🥈🥉 메달 + 비율 바 차트 시각화
 
 ### 📊 통계 대시보드
 
@@ -77,7 +77,7 @@ GitHub에 코드를 push하면 **GitHub Actions가 자동으로 빌드 후 AWS S
 
 ### 🔒 도서 관리 (사서 전용)
 
-- 비밀번호 입력 후 사서 모드 진입 (기본 비밀번호: `1234`)
+- 비밀번호 입력 후 사서 모드 진입
 - 도서 추가: 제목, 저자, 카테고리(셀렉트박스), 권수 입력
 - 도서 삭제: 전체 목록에서 개별 삭제
 - 잠금 버튼으로 사서 모드 종료
@@ -90,10 +90,11 @@ GitHub에 코드를 push하면 **GitHub Actions가 자동으로 빌드 후 AWS S
 | --------- | --------------------------------------- |
 | Framework | React 18 (CRA)                          |
 | Styling   | CSS (단일 App.css)                      |
-| Hosting   | AWS S3 정적 웹 호스팅                   |
+| Hosting   | AWS S3 정적 웹 호스팅 / AWS Amplify     |
 | CI/CD     | GitHub Actions                          |
 | Font      | Google Fonts (Noto Sans KR, Space Mono) |
 | Image     | Unsplash (카테고리별 커버 이미지)       |
+| AI        | Claude (Anthropic)                      |
 
 ---
 
@@ -109,23 +110,17 @@ library-system/
 ├── src/
 │   ├── App.js              # 메인 앱 컴포넌트 (전체 상태 관리 + UI)
 │   ├── App.css             # 전체 스타일
-│   ├── index.js            # React 진입점 (App.js를 index.html에 렌더링)
+│   ├── index.js            # React 진입점
 │   └── data.js             # 샘플 데이터, 카테고리, 커버 이미지 상수
+├── amplify.yml             # AWS Amplify 빌드 설정
 ├── .gitignore
-├── package.json            # 프로젝트 의존성 및 스크립트
+├── package.json
 └── README.md
 ```
 
 ---
 
 ## ⚙️ 로컬 실행 방법
-
-### 사전 요구사항
-
-- Node.js 20 이상
-- npm
-
-### 실행 순서
 
 ```bash
 # 1. 저장소 클론
@@ -140,77 +135,38 @@ npm start
 # 브라우저에서 http://localhost:3000 자동으로 열림
 ```
 
-### 빌드 테스트
-
-```bash
-# 프로덕션 빌드 (build/ 폴더 생성)
-npm run build
-
-# 빌드 결과 확인
-ls build/
-```
-
----
-
-## 🪣 AWS S3 설정
-
-### 1. S3 버킷 생성
-
-1. AWS 콘솔 → S3 → **버킷 만들기**
-2. 버킷 이름 입력 (예: `mybucket-20260101`) — 전 세계 고유해야 함
-3. 리전: `us-east-1` (미국 동부)
-4. **퍼블릭 액세스 차단 → 모두 해제** ✅
-5. 나머지는 기본값 → 버킷 만들기
-
-### 2. 정적 웹 호스팅 활성화
-
-1. 버킷 선택 → **속성** 탭
-2. 맨 아래 **정적 웹 사이트 호스팅** → 편집
-3. 활성화 선택
-4. 인덱스 문서: `index.html`
-5. **오류 문서도 `index.html` 입력** ← 꼭 하세요! (새로고침 404 방지)
-6. 저장
-
-### 3. 버킷 정책 설정 (퍼블릭 읽기 허용)
-
-버킷 → **권한** 탭 → **버킷 정책** → 편집 후 아래 JSON 붙여넣기
-
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "PublicReadGetObject",
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::내-버킷-이름/*"
-    }
-  ]
-}
-```
-
-> ⚠️ `내-버킷-이름` 부분을 본인 버킷 이름으로 꼭 변경하세요!
-
 ---
 
 ## 🤖 GitHub Actions CI/CD 설정
 
-### 1. GitHub Secrets 등록
+### GitHub Secrets 등록
 
 레포지토리 → `Settings` → `Secrets and variables` → `Actions` → **New repository secret**
 
-| Secret 이름             | 값                                  | 위치                                |
-| ----------------------- | ----------------------------------- | ----------------------------------- |
-| `AWS_ACCESS_KEY_ID`     | `aws_access_key_id` 값              | AWS Academy → AWS Details → AWS CLI |
-| `AWS_SECRET_ACCESS_KEY` | `aws_secret_access_key` 값          | AWS Academy → AWS Details → AWS CLI |
-| `AWS_SESSION_TOKEN`     | `aws_session_token` 값              | AWS Academy → AWS Details → AWS CLI |
-| `S3_BUCKET_NAME`        | 버킷 이름 (예: `mybucket-20260101`) | S3 버킷 이름                        |
+| Secret 이름             | 설명                      |
+| ----------------------- | ------------------------- |
+| `AWS_ACCESS_KEY_ID`     | AWS Academy Access Key    |
+| `AWS_SECRET_ACCESS_KEY` | AWS Academy Secret Key    |
+| `AWS_SESSION_TOKEN`     | AWS Academy Session Token |
+| `S3_BUCKET_NAME`        | 배포할 S3 버킷 이름       |
 
-> ⚠️ AWS Academy 세션은 **4시간마다 만료**됩니다.  
-> 재배포 시 Secrets 3개(`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_SESSION_TOKEN`)를 새 값으로 업데이트하세요.
+> ⚠️ AWS Academy 세션은 4시간마다 만료됩니다. 재배포 시 Secrets 3개를 새 값으로 업데이트하세요.
 
-### 2. deploy.yml 전체 내용
+### 배포 흐름
+
+```
+git push origin main
+        ↓
+GitHub Actions 자동 실행
+        ├── 1. 소스 코드 체크아웃
+        ├── 2. Node.js 20 설치
+        ├── 3. npm install
+        ├── 4. npm run build → ./build 폴더 생성
+        ├── 5. AWS 자격증명 설정
+        └── 6. aws s3 sync ./build → S3 업로드
+```
+
+### deploy.yml
 
 ```yaml
 name: Deploy React to S3 (Academy)
@@ -239,7 +195,6 @@ jobs:
 
       - name: Build
         run: npm run build
-        # 빌드 결과물은 ./build 폴더에 생성됩니다
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -250,67 +205,59 @@ jobs:
           aws-region: us-east-1
 
       - name: Deploy to S3
-        run: |
-          aws s3 sync ./build s3://${{ secrets.S3_BUCKET_NAME }} --delete
+        run: aws s3 sync ./build s3://${{ secrets.S3_BUCKET_NAME }} --delete
 ```
 
 ---
 
-## 🔄 배포 흐름
+## ☁️ AWS Amplify 호스팅
 
-```
-코드 수정
-    ↓
-git push origin main
-    ↓
-GitHub Actions 자동 실행
-    ├── 1. 소스 코드 체크아웃
-    ├── 2. Node.js 20 설치
-    ├── 3. npm install (의존성 설치)
-    ├── 4. npm run build → ./build 폴더 생성
-    ├── 5. AWS 자격증명 설정
-    └── 6. aws s3 sync ./build → S3 업로드
-              ↓
-    브라우저에서 S3 URL 접속
+과제1의 GitHub 레포지토리를 AWS Amplify에 연결하여 자동 배포합니다.
+`git push` 시 Amplify가 자동으로 빌드 → 배포까지 처리합니다.
+
+### amplify.yml
+
+```yaml
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: build
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - node_modules/**/*
 ```
 
-### 배포 URL 확인 방법
+### GitHub Actions vs Amplify 비교
 
-S3 → 버킷 → **속성** → **정적 웹 사이트 호스팅** → **버킷 웹 사이트 엔드포인트**
-
-```
-http://[버킷이름].s3-website-us-east-1.amazonaws.com
-```
+| 구분        | GitHub Actions           | AWS Amplify            |
+| ----------- | ------------------------ | ---------------------- |
+| 배포 대상   | 내 S3 버킷               | Amplify 전용 서버      |
+| 설정 난이도 | yaml 직접 작성           | GitHub 연결만으로 자동 |
+| 세션 만료   | 4시간마다 Secrets 재등록 | 없음                   |
+| 배포 URL    | s3-website URL           | amplifyapp.com         |
 
 ---
 
 ## ⚠️ 주의사항
 
-### AWS Academy 세션 만료
+**새로고침 시 404 에러**
+S3 정적 호스팅 설정에서 오류 문서를 반드시 `index.html`로 설정하세요.
 
-AWS Academy 환경은 세션이 **4시간마다 초기화**됩니다.  
-GitHub Actions 재실행 전 반드시 Secrets 3개를 최신 값으로 업데이트하세요.
-
-### 새로고침 시 404 에러
-
-S3 정적 호스팅 설정에서 **오류 문서를 반드시 `index.html`로 설정**하세요.  
-설정하지 않으면 페이지 새로고침 시 404 에러가 발생합니다.
-
-### 화면이 하얗게 나올 때
-
+**화면이 하얗게 나올 때**
 `package.json`의 `homepage` 값이 `"."`인지 확인하세요.
 
-```json
-{
-  "homepage": "."
-}
-```
-
-### 사서 비밀번호 변경
-
-기본 비밀번호는 `1234`입니다.  
-`src/App.js` 파일의 아래 값을 수정하세요.
+**사서 비밀번호 변경**
+`src/App.js`의 아래 값을 수정하세요.
 
 ```javascript
-const LIBRARIAN_PASSWORD = "1234"; // 여기를 변경
+const LIBRARIAN_PASSWORD = "1234";
 ```
