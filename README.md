@@ -35,10 +35,10 @@
 
 ## 🎬 시연 영상
 
-| 과제                           | 영상           |
-| ------------------------------ | -------------- |
-| GitHub Actions CI/CD 구축 시연 | [YouTube 링크] |
-| AWS Amplify 호스팅 시연        | [YouTube 링크] |
+| 과제                           | 영상                         |
+| ------------------------------ | ---------------------------- |
+| GitHub Actions CI/CD 구축 시연 | https://youtu.be/ZrYCbC9toYs |
+| AWS Amplify 호스팅 시연        | [YouTube 링크]               |
 
 ---
 
