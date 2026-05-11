@@ -112,9 +112,9 @@ library-system/
 │   ├── App.css             # 전체 스타일
 │   ├── index.js            # React 진입점
 │   └── data.js             # 샘플 데이터, 카테고리, 커버 이미지 상수
-├── amplify.yml             # AWS Amplify 빌드 설정
 ├── .gitignore
 ├── package.json
+├── package-lock.json
 └── README.md
 ```
 
@@ -249,15 +249,12 @@ frontend:
 
 ## ⚠️ 주의사항
 
-**새로고침 시 404 에러**
-S3 정적 호스팅 설정에서 오류 문서를 반드시 `index.html`로 설정하세요.
-
-**화면이 하얗게 나올 때**
-`package.json`의 `homepage` 값이 `"."`인지 확인하세요.
+**AWS Academy 세션 만료**
+S3 배포 시 세션이 4시간마다 만료됩니다.
+재배포 전 Secrets 3개를 새 값으로 업데이트하세요.
 
 **사서 비밀번호 변경**
 `src/App.js`의 아래 값을 수정하세요.
-
 ```javascript
 const LIBRARIAN_PASSWORD = "1234";
 ```
